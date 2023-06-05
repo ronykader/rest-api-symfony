@@ -1,0 +1,35 @@
+<container>
+    {# Header #}
+    <hr>
+    <spacer size="20"></spacer>
+    <row>
+        <columns>
+            <p>
+                Hello, {{ name }}
+            </p>
+            <p>
+                Thank you for signing up for our service. To complete your registration, please click on the following
+                link to verify your email address:
+            </p>
+        </columns>
+    </row>
+    <row>
+        <columns>
+            <p>
+                <a href="{{ active_url }}" target="_blank">Verification Link</a>
+            </p>
+            <p>
+                By verifying your email, you will gain access to all the features and benefits of our platform.
+            </p>
+            <p>
+                If you did not sign up for our service, please ignore this email.
+            </p>
+            <p>
+                Thank you,</br>
+                The Garden Team
+            </p>
+        </columns>
+    </row>
+    {# Footer #}
+</container>
+

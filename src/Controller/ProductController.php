@@ -8,8 +8,6 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\Mailer\MailerInterface;
-use Symfony\Component\Mime\Email;
 use Symfony\Component\Routing\Annotation\Route;
 
 #[Route('/api', name: 'api_')]
@@ -46,20 +44,13 @@ class ProductController extends AbstractController
      * @return JsonResponse
      */
     #[Route('/products', name: 'product_create', methods: ['POST'])]
-    public function create(ManagerRegistry $doctrine, Request $request, MailerInterface $mailer): JsonResponse
+    public function create(ManagerRegistry $doctrine, Request $request): JsonResponse
     {
         $entityManager = $doctrine->getManager();
         $product = new Product();
         $this->createUpdateProcess($product, $request);
         $entityManager->persist($product);
         $entityManager->flush();
-
-        $email = (new Email())->from('rk@gmail.com')
-            ->to('rony.ksr06@gmail.com')
-            ->subject('Sending Testing Email')
-            ->text('Welcome to the new Symfony API Email Testing');
-
-        $mailer->send($email);
 
         $data = [
             'id' => $product->getId(),

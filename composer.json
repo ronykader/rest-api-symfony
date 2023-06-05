@@ -12,6 +12,8 @@
         "doctrine/orm": "^2.15",
         "friendsofsymfony/rest-bundle": "^3.5",
         "jms/serializer-bundle": "^5.2",
+        "lexik/jwt-authentication-bundle": "^2.19",
+        "symfony/asset": "6.3.*",
         "symfony/console": "6.3.*",
         "symfony/dotenv": "6.3.*",
         "symfony/flex": "^2",
@@ -19,6 +21,7 @@
         "symfony/mailer": "6.3.*",
         "symfony/maker-bundle": "^1.48",
         "symfony/runtime": "6.3.*",
+        "symfony/twig-bundle": "6.3.*",
         "symfony/yaml": "6.3.*"
     },
     "config": {
