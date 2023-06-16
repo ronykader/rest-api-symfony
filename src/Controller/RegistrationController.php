@@ -136,9 +136,6 @@ class RegistrationController extends AbstractController
         ];
 
         return $this->json($data, Response::HTTP_OK);
-
-
-
     }
 
     /**
@@ -165,6 +162,4 @@ class RegistrationController extends AbstractController
     {
         return new Response('ok');
     }
-
-
 }
